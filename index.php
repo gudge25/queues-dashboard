@@ -76,20 +76,25 @@ var talktime=0;
 var answercall=0;
 var unanswercall = 0;
 var ServiceLevel=0.0;
+var ServiceLevel2=0.0;
+
 var loopcount=0;
 
 $.get( "https://pbx.gixo.co.uk/Lookup/stats.php?cmd=queue%20show", function( data ) {
 a1 = data.split("\n");
 for (let i = 0; i < a1.length; i++) {
 let position = a1[i].search("strategy");
+let position1 = a1[i].search("default");
 	if(position!=-1)
 	{
 	
-	loopcount=loopcount+1;
-	if(loopcount>1)
+	
+	if(position1 == -1)
 	{
+	loopcount=loopcount+1;
 	let substr = a1[i].substring(position);
 	var stringArray = substr.split(/(\s+)/);
+	console.log(stringArray);
 	//for hold
 	console.log(stringArray[2]);
 	holdtime = holdtime + parseInt(stringArray[2].substring(1, stringArray[2].length - 1));
@@ -117,14 +122,21 @@ let position = a1[i].search("strategy");
 	ServiceLevel =ServiceLevel + parseFloat(stringArray[16].substring(3, stringArray[16].length - 2));
 	console.log(ServiceLevel);
 
+//for Service Level 2
+	console.log(stringArray[16]);
+	ServiceLevel2 =ServiceLevel2 + parseFloat(stringArray[18].substring(4, stringArray[18].length - 2));
+	console.log(ServiceLevel2);
 
 
-	 $('#holdtime').html(holdtime/loopcount);
-	$('#talktime').html(talktime/loopcount);
+
+
+	console.log("loop"+loopcount);
+	 $('#holdtime').html(Number(holdtime/(loopcount)).toFixed(2));
+	$('#talktime').html(Number(talktime/(loopcount)).toFixed(2));
 	$('#aanswer').html(answercall);
 	$('#unanwser').html(unanswercall);
-	$('#SL').html(ServiceLevel);
-	console.log(stringArray);
+	$('#SL').html( Number(ServiceLevel/(loopcount)).toFixed(2));
+	$('#SL2').html( Number(ServiceLevel2/(loopcount)).toFixed(2));
 	}
 	}
 
@@ -136,7 +148,7 @@ console.log(a1[i]);
 });
 
 
-}, 1000); 
+}, 10000); 
 
     $(function(){
 

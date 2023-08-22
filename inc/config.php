@@ -60,12 +60,7 @@ $one->main_nav_active              = basename($_SERVER['PHP_SELF']);
      if(isset($_SESSION['usertype']) && $usertype=="Admin") 
      {
 $one->main_nav                     = array(
-    array(
-        'name'  => '<span class="sidebar-mini-hide">Search</span>',
-        'icon'  => 'si si-speedometer',
-        'url'   => 'index.php'
-    ),
-  
+     
 //    array(
 //        'name'  => '<span class="sidebar-mini-hide">User Interface</span>',
 //        'type'  => 'heading'
@@ -133,12 +128,7 @@ $one->main_nav                     = array(
      }
      else{
          $one->main_nav                     = array(
-    array(
-        'name'  => '<span class="sidebar-mini-hide">Search</span>',
-        'icon'  => 'si si-speedometer',
-        'url'   => 'index.php'
-    )                       
-             
+          
      );    
          
      }
