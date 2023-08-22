@@ -1,0 +1,59 @@
+  ul{
+        padding: 0;
+        list-style: none;
+        background: #f2f2f2;
+       text-align: right;
+    }
+    ul li{
+        display: inline-block;
+        position: relative;
+        line-height: 21px;
+        text-align: left;
+        width: 200px;
+    }
+    ul li.logbtn{
+        display: inline-block;
+        position: static ;
+        line-height: 21px;
+        text-align: right;
+        width: 300px; 
+        
+        
+        
+    }
+    ul li.logbtn a{
+            display: block;
+        padding: 8px 25px;
+        color: #333;
+        text-decoration: none;
+    }
+    
+    ul li.logbtn a:hover{
+        color:  #000000;
+        background: #f2f2f2;
+    }
+    
+    ul li a{
+        display: block;
+        padding: 8px 25px;
+        color: #333;
+        text-decoration: none;
+    }
+    ul li a:hover{
+        color: #fff;
+        background: #939393;
+    }
+    ul li ul.dropdown{
+        min-width: 100%; /* Set width of the dropdown */
+        background: #f2f2f2;
+        display: none;
+        position: absolute;
+        z-index: 999;
+        right: 0;
+    }
+    ul li:hover ul.dropdown{
+        display: block;	/* Display the dropdown */
+    }
+    ul li ul.dropdown li{
+        display: block;
+    }

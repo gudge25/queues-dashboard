@@ -1,0 +1,58 @@
+.demo-description {
+    clear: both;
+    padding: 12px;
+    font-size: 1.3em;
+    line-height: 1.4em;
+}
+
+.ui-draggable, .ui-droppable {
+    background-position: top;
+}
+
+
+.table1 td {
+    padding: 8px;
+    line-height: 5px;
+    width: 500px;
+    text-align: left;
+    vertical-align: top;
+    border-top: 1px solid #dddddd;
+}
+.table1 thead {
+    padding: 8px;
+    line-height: 20px;
+    width: 500px;
+    text-align: left;
+    vertical-align: top;
+    border-top: 1px solid #dddddd;
+}
+
+
+table1  thead tr{
+    font-family: Arial, monospace;
+    font-size: 12px;
+}
+
+table1  thead tr th{
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+    margin: 0px;
+    padding: 8px;
+    background-color: #cccccc;
+}
+
+table1  tr {
+    font-family: arial, monospace;
+    color: black;
+    font-size:10px;
+    background-color: white;
+}
+
+table1  tr.odd {
+    background-color: #AAAAAA;
+}
+
+table1  tr td, th{
+    border-bottom: 1px solid black;
+    padding: 1px;
+}
