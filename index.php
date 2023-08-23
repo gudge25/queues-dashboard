@@ -64,7 +64,7 @@ if (!isset($_SESSION['uid'])) {
 			</table>
 
 		</div>
-<div class="block-content">
+		<div class="block-content">
 
 			<table class="table table-bordered table-striped js-dataTable-full">
 				<thead>
@@ -72,14 +72,14 @@ if (!isset($_SESSION['uid'])) {
 						<th>
 							<h4>Caller Count</h4>
 						</th>
-						 
+
 
 					</tr>
 				</thead>
 				<tbody>
 					<tr>
 						<td id='callercount'></td>
-							</tr>
+					</tr>
 				</tbody>
 			</table>
 
@@ -120,21 +120,31 @@ if (!isset($_SESSION['uid'])) {
 
 		var loopcount = 0;
 
-		$.get("https://pbx.gixo.co.uk/Lookup/stats.php?cmd=queue%20show", function(data) {
+		// Get the current URL
+		var currentURL = window.location.href;
+
+		// Extract the domain and protocol from the current URL
+		var domainAndProtocol = currentURL.split('/').slice(0, 3).join('/');
+
+		// Construct the URL for the AJAX request
+		var ajaxURL = domainAndProtocol + "/Lookup/stats.php?cmd=queue%20show";
+
+
+		// Make the AJAX request using the constructed URL
+		$.get(ajaxURL, function(data) {
 			a1 = data.split("\n");
 
 
-let values = ["PJSIP"];
-// let myString = "Nathan is a doctor and he leaves nearby my house 1.";
+			let values = ["PJSIP"];
+			// let myString = "Nathan is a doctor and he leaves nearby my house 1.";
 			// let values = ['1.','2.', "3.","4.","5.","6.","7.","8.","9."];
 			for (let i = 0; i < a1.length; i++) {
 				let position = a1[i].search("strategy");
 				let position1 = a1[i].search("default");
-				 let callerfound = values.every((item) => a1[i].includes(item));
-				if (callerfound)
-					{				
-				callercount = callercount+1;
-					}
+				let callerfound = values.every((item) => a1[i].includes(item));
+				if (callerfound) {
+					callercount = callercount + 1;
+				}
 				if (position != -1) {
 
 
@@ -188,7 +198,7 @@ let values = ["PJSIP"];
 
 
 				console.log(a1[i]);
-				
+
 			}
 			$('#callercount').html(callercount);
 
