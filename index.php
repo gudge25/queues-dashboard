@@ -91,7 +91,6 @@ if (!isset($_SESSION['uid'])) {
 <script>
 	setInterval(function() {
 
-		var startTime = new Date(); // Record the start time
 		var holdtime = 0;
 		var talktime = 0;
 		var answercall = 0;
@@ -163,9 +162,7 @@ if (!isset($_SESSION['uid'])) {
 				console.log(a1[i]);
 			}
 
-			var endTime = new Date(); // Record the end time after the AJAX request
-			var executionTime = endTime - startTime; // Calculate the time difference
-			console.log("AJAX request execution time: " + executionTime + " milliseconds");
+		
 
 		});
 
