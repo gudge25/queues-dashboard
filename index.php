@@ -91,7 +91,7 @@ if (!isset($_SESSION['uid'])) {
 <script>
 	setInterval(function() {
 
-		var startTime = new Date(); // Record the start time before the AJAX request	
+		var startTime = new Date(); // Record the start time
 		var holdtime = 0;
 		var talktime = 0;
 		var answercall = 0;
