@@ -27,8 +27,6 @@ if (!isset($_SESSION['uid'])) {
 
 		<div class="block-content">
 
-
-
 			<table class="table table-bordered table-striped js-dataTable-full">
 				<thead>
 					<tr>
@@ -66,6 +64,27 @@ if (!isset($_SESSION['uid'])) {
 			</table>
 
 		</div>
+<div class="block-content">
+
+			<table class="table table-bordered table-striped js-dataTable-full">
+				<thead>
+					<tr>
+						<th>
+							<h4>Caller Count</h4>
+						</th>
+						 
+
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td id='callercount'></td>
+							</tr>
+				</tbody>
+			</table>
+
+		</div>
+
 	</div>
 
 
@@ -97,14 +116,25 @@ if (!isset($_SESSION['uid'])) {
 		var unanswercall = 0;
 		var ServiceLevel = 0.0;
 		var ServiceLevel2 = 0.0;
+		var callercount = 0;
 
 		var loopcount = 0;
 
 		$.get("https://pbx.gixo.co.uk/Lookup/stats.php?cmd=queue%20show", function(data) {
 			a1 = data.split("\n");
+
+
+let values = ["PJSIP"];
+// let myString = "Nathan is a doctor and he leaves nearby my house 1.";
+			// let values = ['1.','2.', "3.","4.","5.","6.","7.","8.","9."];
 			for (let i = 0; i < a1.length; i++) {
 				let position = a1[i].search("strategy");
 				let position1 = a1[i].search("default");
+				 let callerfound = values.every((item) => a1[i].includes(item));
+				if (callerfound)
+					{				
+				callercount = callercount+1;
+					}
 				if (position != -1) {
 
 
@@ -146,8 +176,6 @@ if (!isset($_SESSION['uid'])) {
 						console.log(ServiceLevel2);
 
 
-
-
 						console.log("loop" + loopcount);
 						$('#holdtime').html(Number(holdtime / (loopcount)).toFixed(2));
 						$('#talktime').html(Number(talktime / (loopcount)).toFixed(2));
@@ -160,14 +188,14 @@ if (!isset($_SESSION['uid'])) {
 
 
 				console.log(a1[i]);
+				
 			}
-
-		
+			$('#callercount').html(callercount);
 
 		});
 
 
-	}, 10000);
+	}, 2000);
 
 	$(function() {
 
