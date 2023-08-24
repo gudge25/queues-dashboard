@@ -67,6 +67,7 @@ if (!isset($_SESSION['uid'])) {
 		<div class="block-content">
 
 			<table class="table table-bordered table-striped js-dataTable-full">
+			<caption>Caller Count</caption>
 				<thead>
 					<tr>
 						<th>
