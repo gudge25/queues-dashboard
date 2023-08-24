@@ -31,22 +31,22 @@ if (!isset($_SESSION['uid'])) {
 				<thead>
 					<tr>
 						<th>
-							<h4>Avg Hold Time</h4>
+							<h5>Avg Hold Time (s)</h5>
 						</th>
 						<th>
-							<h4>Avg Talk Time</h4>
+							<h5>Avg Talk Time</h5>
 						</th>
 						<th>
-							<h4>Answer Calls</h4>
+							<h5>Answer Calls</h5>
 						</th>
 						<th>
-							<h4>UnAnswer Calls</h4>
+							<h5>UnAnswer Calls</h5>
 						</th>
 						<th>
-							<h4>SL</h4>
+							<h5>SL</h5>
 						</th>
 						<th>
-							<h4>SL2</h4>
+							<h5>SL2</h5>
 						</th>
 
 					</tr>
