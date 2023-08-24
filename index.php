@@ -135,7 +135,7 @@ if (!isset($_SESSION['uid'])) {
 			a1 = data.split("\n");
 
 
-			let values = ["PJSIP"];
+			let values = ["prio"]; //Get Callers from Queues
 			// let myString = "Nathan is a doctor and he leaves nearby my house 1.";
 			// let values = ['1.','2.', "3.","4.","5.","6.","7.","8.","9."];
 			for (let i = 0; i < a1.length; i++) {
