@@ -13,6 +13,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
+      - name: Psalm
+        uses: docker://ghcr.io/psalm/psalm-github-actions  
+
       - name: Set up PHP
         uses: shivammathur/setup-php@v2
         with:
