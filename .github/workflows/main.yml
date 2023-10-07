@@ -1,4 +1,4 @@
-name: CI
+name: PHP CI
 
 on:
   push:
@@ -8,18 +8,17 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    
+
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '14'
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '7.4'
 
-    - name: Install dependencies
-      run: npm install
+      - name: Install dependencies
+        run: echo "Hello World"
 
-    - name: Run tests
-      run: npm test
+      # Add more steps as needed, e.g., linting, static analysis, etc.
