@@ -6,6 +6,12 @@ on:
       - main
 
 jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test
+        run: echo "Test"
+    
   build:
     runs-on: ubuntu-latest
 
