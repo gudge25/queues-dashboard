@@ -1,33 +1,26 @@
-name: PHP CI
+name: Build
 
 on:
   push:
     branches:
       - main
 
+
 jobs:
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Test
-        run: echo "Test"
-    
   build:
+    name: Build
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Psalm
-        uses: docker://ghcr.io/psalm/psalm-github-actions  
-
-      - name: Set up PHP
-        uses: shivammathur/setup-php@v2
+      - uses: actions/checkout@v2
         with:
-          php-version: '7.4'
-
-      - name: Install dependencies
-        run: echo "Hello World"
-
-      # Add more steps as needed, e.g., linting, static analysis, etc.
+          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+      - uses: sonarsource/sonarqube-scan-action@master
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+      # If you wish to fail your job when the Quality Gate is red, uncomment the
+      # following lines. This would typically be used to fail a deployment.
+      #- uses: sonarsource/sonarqube-quality-gate-action@master
+      #   timeout-minutes: 5
+      #   env:
+      #     SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
