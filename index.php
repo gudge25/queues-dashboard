@@ -37,6 +37,9 @@ if (!isset($_SESSION['uid'])) {
 							<h5>Avg Talk Time</h5>
 						</th>
 						<th>
+							<h5>Wait Calls</h5>
+						</th>
+						<th>
 							<h5>Answer Calls</h5>
 						</th>
 						<th>
@@ -55,6 +58,7 @@ if (!isset($_SESSION['uid'])) {
 					<tr>
 						<td id='holdtime'></td>
 						<td id='talktime'></td>
+						<td id='waitcall'></td>
 						<td id='aanswer'></td>
 						<td id='unanwser'></td>
 						<td id='SL'></td>
@@ -114,6 +118,7 @@ if (!isset($_SESSION['uid'])) {
 		var talktime = 0;
 		var answercall = 0;
 		var unanswercall = 0;
+		var waitcall = 0;
 		var ServiceLevel = 0.0;
 		var ServiceLevel2 = 0.0;
 		var callercount = 0;
@@ -163,6 +168,11 @@ if (!isset($_SESSION['uid'])) {
 						talktime = talktime + parseInt(stringArray[6].substring(0, stringArray[6].length - 1));
 						console.log(talktime);
 
+						//for waitcall
+						console.log(stringArray[10]);
+						waitcall = waitcall + parseInt(stringArray[10].substring(2, stringArray[10].length - 1));
+						console.log(waitcall);
+
 
 						//for answercall
 						console.log(stringArray[12]);
@@ -191,6 +201,7 @@ if (!isset($_SESSION['uid'])) {
 						$('#talktime').html(Number(talktime / (loopcount)).toFixed(2));
 						$('#aanswer').html(answercall);
 						$('#unanwser').html(unanswercall);
+						$('#waitcall').html(waitcall);
 						$('#SL').html(Number(ServiceLevel / (loopcount)).toFixed(2));
 						$('#SL2').html(Number(ServiceLevel2 / (loopcount)).toFixed(2));
 					}
