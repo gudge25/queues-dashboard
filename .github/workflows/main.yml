@@ -1,0 +1,33 @@
+name: PHP CI
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test
+        run: echo "Test"
+    
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Psalm
+        uses: docker://ghcr.io/psalm/psalm-github-actions  
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '7.4'
+
+      - name: Install dependencies
+        run: echo "Hello World"
+
+      # Add more steps as needed, e.g., linting, static analysis, etc.
