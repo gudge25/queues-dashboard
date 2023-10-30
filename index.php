@@ -6,6 +6,7 @@ if (!isset($_SESSION['uid'])) {
 }
 ?>
 <!-- Page JS Plugins CSS -->
+<link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="<?php echo $one->assets_folder; ?>js/plugins/slick/slick.min.css">
 <link rel="stylesheet" href="<?php echo $one->assets_folder; ?>js/plugins/slick/slick-theme.min.css">
 
@@ -15,7 +16,7 @@ if (!isset($_SESSION['uid'])) {
 <!-- Page Header -->
 
 
-<div class="content">
+<!-- <div class="content">
 
 	<div class="btn-toolbar">
 
@@ -93,7 +94,49 @@ if (!isset($_SESSION['uid'])) {
 
 
 
-</div>
+</div> -->
+
+<div class="main-container">
+    <div class="header">
+      <h1>PBX Wallboard</h1>
+      <time datetime="2023-10-30T12:13:15-08:00">12:13 PM</time>
+    </div>
+    <div class="content">
+      <div class="waiting">
+        <h2>Waiting</h2>
+        <span>0</span>
+      </div>
+      <div class="agents-busy">
+        <h2>Agents Busy</h2>
+        <span>1</span>
+      </div>
+      <div class="total">
+        <h2>Total</h2>
+        <span>64</span>
+      </div>
+      <div class="avg-talk-time">
+        <h2>AVG Talk Time</h2>
+        <span>00:02:18</span>
+      </div>
+      <div class="callbacks">
+        <h2>Callbacks</h2>
+        <span>0</span>
+      </div>
+      <div class="answered">
+        <h2>Answered</h2>
+        <span>64</span>
+      </div>
+      <div class="waiting-time">
+        <h2>Waiting Time</h2>
+        <span>--</span>
+      </div>
+      <div class="abandoned">
+        <h2>Abandoned</h2>
+        <span>0</span>
+      </div>
+    </div>
+  </div>
+
 <!-- END Page Header -->
 
 
