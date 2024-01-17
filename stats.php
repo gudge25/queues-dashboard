@@ -6,7 +6,7 @@ $socket = fsockopen("127.0.0.1","5038", $errno, $errstr, 10);
         }else{ 
             fputs($socket, "Action: Login\r\n");
             fputs($socket, "UserName: admin\r\n");
-            fputs($socket, "Secret: HnGz/HvBPY9b\r\n\r\n");
+            fputs($socket, "Secret: FBdqWf28+I9P\r\n\r\n");
             fputs($socket, "Action: Command\r\n");
             fputs($socket, "Command: $command\r\n\r\n");
            fputs($socket, "Action: Logoff\r\n\r\n");

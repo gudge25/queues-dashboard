@@ -1,0 +1,85 @@
+.main-container {
+    width: 85%;
+    margin: 0 auto;
+    height: 100px;
+  }
+  
+  .header {
+    text-align: center;
+    padding: 1rem;
+  }
+  
+  .header h1 {
+    font-size: 3rem;
+    margin-bottom: 0;
+  }
+  
+  .header time {
+    font-size: 1rem;
+    color: gray;
+  }
+  
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 1rem;
+  }
+  
+  .content div {
+    width: 25%;
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    border-radius: 20px; /* Adjust the value to control the rounding */
+    border: 1px dotted #000; /* Add a 1px black border */	
+  }
+  
+  .content div h2 {
+    font-size: 2rem;
+    margin-bottom: 0;
+  }
+  
+  .content div span {
+    font-size: 2rem;
+  }
+  
+  .waiting {
+    background-color: #ffe6e6;
+  }
+  
+  .agents-busy {
+    background-color: #fffde7;
+  }
+  
+  .total {
+    background-color: #e6ffe6;
+  }
+  
+  .avg-talk-time {
+    background-color: #e6fff7;
+  }
+  
+  .callbacks {
+    background-color: #fffde7;
+  }
+  
+  .answered {
+    background-color: #e6ffe6;
+  }
+  
+  .waiting-time {
+    background-color: #fffde7;
+  }
+  
+  .abandoned {
+    background-color: #e6ffe6;
+  }
+
+  .percentage {
+    background-color: #87CEFA;
+  }
+
