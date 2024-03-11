@@ -13,7 +13,7 @@ session_start();
 require 'classes/Template.php';
 
 // Create a new Template Object
-$one                               = new Template('Portal', '1.0', 'assets'); // Name, version and assets folder's name
+$one                               = new Template('Wallboard', '0.2', 'assets'); // Name, version and assets folder's name
 
 // Global Meta Data
 $one->author                       = '';
